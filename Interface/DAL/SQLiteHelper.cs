@@ -9,7 +9,7 @@ namespace Interface.DAL
 {
     class SQLiteHelper
     {
-        internal static List<Film> GetFilms()
+        internal static List<Films> GetFilms()
         {
             try
             {//юзинг необходим, чтобы при выходе из конструкции включился мдот despose() который закроет все соединения
@@ -28,10 +28,10 @@ namespace Interface.DAL
                     {
                         using(var rdr = cmd.ExecuteReader())
                         {
-                            List<Film> films = new List<Film>();
+                            List<Films> films = new List<Films>();
                             while(rdr.Read())//Отправляет CommandText в Connection и строит SqlDataReader.
                             {
-                                films.Add(new Film
+                                films.Add(new Films
                                 {
                                     Id = rdr.GetInt32(0),
                                     Title = rdr.GetString(1),
@@ -51,7 +51,36 @@ namespace Interface.DAL
 
             return null;
         }
+        internal static List<Genres> GetGenre()
+        {
+            try
+            {//юзинг необходим, чтобы при выходе из конструкции включился мдот despose() который закроет все соединения
+                using (var connection = new SQLiteConnection(@"Data Source = db.sqlite;Vesion=3;"))//получили соединение
+                {
+                    connection.Open();//открыли соединение
 
-      
+                    using (var cmd = new SQLiteCommand(@"SELECT Name FROM genre  ", connection))//получить команду
+                    {
+                        using (var rdr = cmd.ExecuteReader())
+                        {
+                            List<Genres> genres = new List<Genres>();
+                            while (rdr.Read())//Отправляет CommandText в Connection и строит SqlDataReader.
+                            {
+                                genres.Add( new Genres
+                                {
+                                    Name = rdr.GetString(0)
+                                });
+                            }
+                            return genres;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+            return null;
+        }
+
+
     }
 }

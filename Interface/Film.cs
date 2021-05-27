@@ -13,13 +13,13 @@ namespace Interface
 {
     public partial class Film : Form
     {
-        private List<DAL.Film> _list;
+        private List<Films> _list;
 
         public Film()
         {
             InitializeComponent();
 
-            _list = new List<DAL.Film>();
+            _list = new List<Films>();
             bsUser.DataSource = _list;
             dataGridView1.AutoGenerateColumns = true;
         }
@@ -28,7 +28,7 @@ namespace Interface
         {
             _list.Clear();//необходимо чтобы новые строчки не накладывались друг на друга
 
-            List<DAL.Film> list = SQLiteHelper.GetFilms();//получаем список из гетфилмс
+            List<Films> list = SQLiteHelper.GetFilms();//получаем список из гетфилмс
             if(list != null && list.Count>0)
             {
                 _list.AddRange(list);//Добавляет элементы указанной коллекции в конец списка
@@ -38,9 +38,9 @@ namespace Interface
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            Form frm = new Start();
-            frm.Show();
-            this.Hide();
+            Close();
+            Form f = new Start();
+            f.Visible = true;
         }
     }
 }

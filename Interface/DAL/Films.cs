@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Interface.DAL
 {
-    internal class Film
+    internal class Films
     {
         [DisplayName("ID")]
         [Browsable(false)]

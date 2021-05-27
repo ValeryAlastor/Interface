@@ -30,6 +30,7 @@ namespace Interface
         private void InitializeComponent()
         {
             this.btnFormAll = new System.Windows.Forms.Button();
+            this.btnGenre = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFormAll
@@ -51,12 +52,32 @@ namespace Interface
             this.btnFormAll.UseVisualStyleBackColor = true;
             this.btnFormAll.Click += new System.EventHandler(this.btnFormAll_Click);
             // 
+            // btnGenre
+            // 
+            this.btnGenre.AllowDrop = true;
+            this.btnGenre.BackgroundImage = global::Interface.Properties.Resources._68;
+            this.btnGenre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenre.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.btnGenre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGenre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btnGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenre.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btnGenre.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGenre.Location = new System.Drawing.Point(110, 84);
+            this.btnGenre.Name = "btnGenre";
+            this.btnGenre.Size = new System.Drawing.Size(122, 42);
+            this.btnGenre.TabIndex = 1;
+            this.btnGenre.Text = "Все жанры";
+            this.btnGenre.UseVisualStyleBackColor = true;
+            this.btnGenre.Click += new System.EventHandler(this.btnGenre_Click);
+            // 
             // Start
             // 
             this.AcceptButton = this.btnFormAll;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 203);
+            this.Controls.Add(this.btnGenre);
             this.Controls.Add(this.btnFormAll);
             this.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.HelpButton = true;
@@ -69,5 +90,6 @@ namespace Interface
         #endregion
 
         private System.Windows.Forms.Button btnFormAll;
+        private System.Windows.Forms.Button btnGenre;
     }
 }

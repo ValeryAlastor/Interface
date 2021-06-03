@@ -8,6 +8,8 @@ namespace Interface.DAL
 {
     class Genres
     {
+       
+
         public string Name { get; internal set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+
 using Interface.DAL;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace Interface
                 _list = new List<Genres>();
                 bsGenre.DataSource = _list;
                 dataGridView1.AutoGenerateColumns = true;
+            
             }
 
             private void btnRefresh_Click(object sender, EventArgs e)

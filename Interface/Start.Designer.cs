@@ -31,6 +31,7 @@ namespace Interface
         {
             this.btnFormAll = new System.Windows.Forms.Button();
             this.btnGenre = new System.Windows.Forms.Button();
+            this.closeApp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFormAll
@@ -71,12 +72,32 @@ namespace Interface
             this.btnGenre.UseVisualStyleBackColor = true;
             this.btnGenre.Click += new System.EventHandler(this.btnGenre_Click);
             // 
+            // closeApp
+            // 
+            this.closeApp.AllowDrop = true;
+            this.closeApp.BackgroundImage = global::Interface.Properties.Resources._68;
+            this.closeApp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeApp.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.closeApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.closeApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.closeApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeApp.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.closeApp.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.closeApp.Location = new System.Drawing.Point(268, 157);
+            this.closeApp.Name = "closeApp";
+            this.closeApp.Size = new System.Drawing.Size(76, 31);
+            this.closeApp.TabIndex = 2;
+            this.closeApp.Text = "Выход";
+            this.closeApp.UseVisualStyleBackColor = true;
+            this.closeApp.Click += new System.EventHandler(this.closeApp_Click);
+            // 
             // Start
             // 
             this.AcceptButton = this.btnFormAll;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 203);
+            this.ClientSize = new System.Drawing.Size(356, 200);
+            this.Controls.Add(this.closeApp);
             this.Controls.Add(this.btnGenre);
             this.Controls.Add(this.btnFormAll);
             this.ForeColor = System.Drawing.SystemColors.MenuHighlight;
@@ -91,5 +112,6 @@ namespace Interface
 
         private System.Windows.Forms.Button btnFormAll;
         private System.Windows.Forms.Button btnGenre;
+        private System.Windows.Forms.Button closeApp;
     }
 }

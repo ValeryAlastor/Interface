@@ -5,9 +5,7 @@ namespace Interface.DAL
 {
     internal class Films
     {
-        [DisplayName("ID")]
-        [Browsable(false)]
-        public int Id { get; internal set; }
+       
         [DisplayName("Название")]
         public string Title { get; internal set; }
         [DisplayName("Описание")]
@@ -20,6 +18,13 @@ namespace Interface.DAL
         public int Time { get; internal set; }
         [DisplayName("Страна")]
         public string Country { get; internal set; }
-        
+        [DisplayName("Главный актер")]
+        public string Actor { get; internal set; }
+        [DisplayName("Композитор")]
+        public string Composer { get; internal set; }
+        [DisplayName("Режисер")]
+        public string Director { get; internal set; }
+        [DisplayName("Жанр")]
+        public string Genre { get; internal set; }
     }
 }

@@ -42,6 +42,8 @@ namespace Interface
             Form f = new Start();
             f.Visible = true;
         }
+
+        
     }
 }
 

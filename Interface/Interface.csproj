@@ -69,10 +69,10 @@
     <Compile Include="DAL\Genres.cs" />
     <Compile Include="DAL\SQLiteHelper.cs" />
     <Compile Include="DAL\Films.cs" />
-    <Compile Include="Film.cs">
+    <Compile Include="Film\Film.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Film.Designer.cs">
+    <Compile Include="Film\Film.Designer.cs">
       <DependentUpon>Film.cs</DependentUpon>
     </Compile>
     <Compile Include="Genre.cs">
@@ -89,7 +89,7 @@
     <Compile Include="Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Film.resx">
+    <EmbeddedResource Include="Film\Film.resx">
       <DependentUpon>Film.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Genre.resx">
@@ -128,9 +128,7 @@
   <ItemGroup>
     <None Include="Resources\68.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Film\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

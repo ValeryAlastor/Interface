@@ -31,5 +31,10 @@ namespace Interface
             frm.Show();
             this.Hide();
         }
+
+        private void closeApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

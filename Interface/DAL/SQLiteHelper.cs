@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Interface.DAL
 {
@@ -17,15 +14,16 @@ namespace Interface.DAL
                 using (var connection = new SQLiteConnection(@"Data Source = db.sqlite;Vesion=3;"))//получили соединение
                 {
                     connection.Open();//открыли соединение
-
+               
                     using (var cmd = new SQLiteCommand(@"SELECT DISTINCT title, description, date_created, age, time, country, Name_A, Name_C, Name_D, Name_G
                                                         FROM films, actors, composers, directors, genres
                                                         WHERE films.id_actors = actors.id_actors
                                                         AND films.id_composer = composers.id_composer
                                                         AND films.id_director = directors.id_director
-                                                        AND films.id_genre = genres.id_genre
-  ", connection))//получить команду
+                                                        AND films.id_genre = genres.id_genre", connection))//получить команду
+  
                     {
+                       
                         using (var rdr = cmd.ExecuteReader())
                         {
                             List<Films> films = new List<Films>();

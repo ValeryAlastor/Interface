@@ -127,7 +127,7 @@ namespace Interface
             List<Films> list = SQLiteHelper.GetFilms();
 
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("title like '{0}%'", textBox2.Text);
-            dataGridView1.DataSource = dataTable;
+        //    dataGridView1.DataSource = dataTable;
         }
     }
 }

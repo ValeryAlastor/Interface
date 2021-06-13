@@ -31,10 +31,10 @@ namespace Interface.DAL
                             {
                                 films.Add(new Films
                                 {
-                                    Title = rdr.GetString(0),
+                                    title = rdr.GetString(0),
                                     Description = rdr.GetString(1),
                                     Date = rdr.GetDateTime(2),
-                                    Age = rdr.GetInt32(3),
+                                    Age = rdr.GetString(3),
                                     Time = rdr.GetInt32(4),
                                     Country = rdr.GetString(5),
                                     Actor = rdr.GetString(6),
@@ -82,5 +82,6 @@ namespace Interface.DAL
 
             return null;
         }
+       
     }
 }

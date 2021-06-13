@@ -7,13 +7,13 @@ namespace Interface.DAL
     {
        
         [DisplayName("Название")]
-        public string Title { get; internal set; }
+        public string title { get; internal set; }
         [DisplayName("Описание")]
         public string Description { get; internal set; }
         [DisplayName("Дата выпуска")]
         public DateTime Date { get; internal set; }
         [DisplayName("Возрастное ограничение")]
-        public int Age { get; internal set; }
+        public string Age { get; internal set; }
         [DisplayName("Время(мин)")]
         public int Time { get; internal set; }
         [DisplayName("Страна")]

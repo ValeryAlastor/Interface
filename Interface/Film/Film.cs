@@ -7,21 +7,20 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Interface
 {
     public partial class Film : Form
     {
         private List<Films> _list;
+        
 
         public Film()
         {
             InitializeComponent();
-
-
             _list = new List<Films>();
             bsUser.DataSource = _list;
-
 
             List<Films> list = SQLiteHelper.GetFilms();//получаем список из гетфилмс
             if (list != null && list.Count > 0)
@@ -119,33 +118,6 @@ namespace Interface
             MessageBox.Show("Pdf-документ сохранен");
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            //  (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("title like '{0}%'", textBox2.Text);
-            bsUser.Filter = "genre='Драма'";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int countRows = 0;
-            
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-            {
-                dataGridView1.Rows[i].Selected = false;
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                    if (dataGridView1.Rows[i].Cells[j].Value != null)
-                    {
-                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox1.Text))
-                        {
-                            countRows++;
-                            break;
-                        }
-                    }
-            }
-            string rows = countRows.ToString();
-            MessageBox.Show($"строки: {rows}");
-        }
-
         private void comboBoxGenre_SelectedIndexChanged(object sender, EventArgs e)        {
             
 
@@ -170,6 +142,62 @@ namespace Interface
                     }
             }
 
+        }
+
+        private void btnChartGenre_Click(object sender, EventArgs e)
+        {
+            List<Genres> list = SQLiteHelper.GetGenre();
+            int countRows = list.Count;//массив равен 6 то бишь количеству строк
+
+            int[] count = new int[countRows];
+            string[] arr = new string[countRows];
+            string[] rows = new string[countRows];
+
+            for (int i = 0; i < countRows; i++)
+            {
+                arr[i] = list[i];
+            }
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                {
+                    if (dataGridView1.Rows[i].Cells[j].Value != null)
+                    {
+                        for (int y = 0; y < countRows; y++)
+                        {
+                            if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(arr[y]))
+                            {
+                                count[y]++;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int y = 0; y < countRows; y++)
+            {
+                rows[y] = count[y].ToString();
+            }
+            for(int i = 0; i<countRows; i++) 
+                chart1.Series[0].Points.AddXY(arr[i], Convert.ToDouble(rows[i]));
+
+        }
+
+        private void btnChartClear_Click(object sender, EventArgs e)
+        {
+            chart1.Series.Clear();
+        }
+
+        private void btnSavePNG_Click(object sender, EventArgs e)
+        {
+            string folderPath = @"D:\\mypic.png";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            chart1.SaveImage(folderPath, ChartImageFormat.Png);
         }
     }
 }

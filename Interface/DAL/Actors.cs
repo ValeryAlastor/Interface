@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Interface.DAL
 {
-    class Genres
+    class Actors
     {
         public string Name { get; internal set; }
-
-        public static implicit operator string(Genres v) => v.Name;
-       
     }
 }

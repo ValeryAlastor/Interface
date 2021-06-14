@@ -82,6 +82,34 @@ namespace Interface.DAL
 
             return null;
         }
-       
+        internal static List<Actors> GetActors()
+        {
+            try
+            {//юзинг необходим, чтобы при выходе из конструкции включился мдот despose() который закроет все соединения
+                using (var connection = new SQLiteConnection(@"Data Source = db.sqlite;Vesion=3;"))//получили соединение
+                {
+                    connection.Open();//открыли соединение
+
+                    using (var cmd = new SQLiteCommand(@"SELECT  Name_A FROM actors ", connection))//получить команду
+                    {
+                        using (var rdr = cmd.ExecuteReader())
+                        {
+                            List<Actors> actors = new List<Actors>();
+                            while (rdr.Read())//Отправляет CommandText в Connection и строит SqlDataReader.
+                            {
+                                actors.Add(new Actors
+                                {
+                                    Name = rdr.GetString(0)
+                                });
+                            }
+                            return actors;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+            return null;
+        }
     }
 }

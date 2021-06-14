@@ -96,7 +96,7 @@ namespace Interface
             this.AcceptButton = this.btnFormAll;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 200);
+            this.ClientSize = new System.Drawing.Size(382, 218);
             this.Controls.Add(this.closeApp);
             this.Controls.Add(this.btnGenre);
             this.Controls.Add(this.btnFormAll);

@@ -45,7 +45,6 @@ namespace Interface
 
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                dataGridView1.Rows[i].Selected = false;
                 for (int j = 0; j < dataGridView1.ColumnCount; j++)
                     if (dataGridView1.Rows[i].Cells[j].Value != null)
                     {
@@ -67,7 +66,6 @@ namespace Interface
         {
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                dataGridView1.Rows[i].Selected = false;
                 dataGridView1.Rows[i].Visible = true;
             }
 
@@ -155,7 +153,7 @@ namespace Interface
 
             for (int i = 0; i < countRows; i++)
             {
-                arr[i] = list[i];
+                arr[i] = list[i];//записываю строки из листа в массив
             }
 
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -187,17 +185,22 @@ namespace Interface
 
         private void btnChartClear_Click(object sender, EventArgs e)
         {
-            chart1.Series.Clear();
+            foreach (var series in chart1.Series)
+            {
+                series.Points.Clear();
+            }
         }
 
         private void btnSavePNG_Click(object sender, EventArgs e)
         {
-            string folderPath = @"D:\\mypic.png";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
+            string folderPath = @"D:\\mychart.png";
+            
             chart1.SaveImage(folderPath, ChartImageFormat.Png);
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

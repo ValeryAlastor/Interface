@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\Actors.cs" />
+    <Compile Include="DAL\Composers.cs" />
     <Compile Include="DAL\Directors.cs" />
     <Compile Include="DAL\Genres.cs" />
     <Compile Include="DAL\SQLiteHelper.cs" />

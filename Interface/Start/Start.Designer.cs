@@ -45,11 +45,11 @@ namespace Interface
             this.btnFormAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFormAll.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnFormAll.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFormAll.Location = new System.Drawing.Point(110, 36);
+            this.btnFormAll.Location = new System.Drawing.Point(87, 44);
             this.btnFormAll.Name = "btnFormAll";
             this.btnFormAll.Size = new System.Drawing.Size(122, 42);
             this.btnFormAll.TabIndex = 0;
-            this.btnFormAll.Text = "Все фильмы";
+            this.btnFormAll.Text = "Фильмы";
             this.btnFormAll.UseVisualStyleBackColor = true;
             this.btnFormAll.Click += new System.EventHandler(this.btnFormAll_Click);
             // 
@@ -64,11 +64,11 @@ namespace Interface
             this.btnGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenre.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnGenre.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGenre.Location = new System.Drawing.Point(110, 84);
+            this.btnGenre.Location = new System.Drawing.Point(59, 119);
             this.btnGenre.Name = "btnGenre";
-            this.btnGenre.Size = new System.Drawing.Size(122, 42);
+            this.btnGenre.Size = new System.Drawing.Size(172, 42);
             this.btnGenre.TabIndex = 1;
-            this.btnGenre.Text = "Все жанры";
+            this.btnGenre.Text = "Прочие данные";
             this.btnGenre.UseVisualStyleBackColor = true;
             this.btnGenre.Click += new System.EventHandler(this.btnGenre_Click);
             // 
@@ -83,7 +83,7 @@ namespace Interface
             this.closeApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeApp.ForeColor = System.Drawing.SystemColors.InfoText;
             this.closeApp.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.closeApp.Location = new System.Drawing.Point(268, 157);
+            this.closeApp.Location = new System.Drawing.Point(102, 207);
             this.closeApp.Name = "closeApp";
             this.closeApp.Size = new System.Drawing.Size(76, 31);
             this.closeApp.TabIndex = 2;
@@ -96,7 +96,7 @@ namespace Interface
             this.AcceptButton = this.btnFormAll;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 218);
+            this.ClientSize = new System.Drawing.Size(289, 250);
             this.Controls.Add(this.closeApp);
             this.Controls.Add(this.btnGenre);
             this.Controls.Add(this.btnFormAll);

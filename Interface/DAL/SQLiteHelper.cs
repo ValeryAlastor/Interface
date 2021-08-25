@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SQLite;
 
 namespace Interface.DAL
@@ -90,7 +89,7 @@ namespace Interface.DAL
                 {
                     connection.Open();//открыли соединение
 
-                    using (var cmd = new SQLiteCommand(@"SELECT  Name_A FROM actors ", connection))//получить команду
+                    using (var cmd = new SQLiteCommand(@"SELECT DISTINCT Name_A FROM actors ", connection))//получить команду
                     {
                         using (var rdr = cmd.ExecuteReader())
                         {
@@ -103,6 +102,65 @@ namespace Interface.DAL
                                 });
                             }
                             return actors;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+            return null;
+        }
+        internal static List<Directors> GetDirectors()
+        {
+            try
+            {//юзинг необходим, чтобы при выходе из конструкции включился мдот despose() который закроет все соединения
+                using (var connection = new SQLiteConnection(@"Data Source = db.sqlite;Vesion=3;"))//получили соединение
+                {
+                    connection.Open();//открыли соединение
+
+                    using (var cmd = new SQLiteCommand(@"SELECT DISTINCT Name_D FROM directors ", connection))//получить команду
+                    {
+                        using (var rdr = cmd.ExecuteReader())
+                        {
+                            List<Directors> directors = new List<Directors>();
+                            while (rdr.Read())//Отправляет CommandText в Connection и строит SqlDataReader.
+                            {
+                                directors.Add(new Directors
+                                {
+                                    Name = rdr.GetString(0)
+                                });
+                            }
+                            return directors;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+            return null;
+        }
+
+        internal static List<Composers> GetComposers()
+        {
+            try
+            {//юзинг необходим, чтобы при выходе из конструкции включился мдот despose() который закроет все соединения
+                using (var connection = new SQLiteConnection(@"Data Source = db.sqlite;Vesion=3;"))//получили соединение
+                {
+                    connection.Open();//открыли соединение
+
+                    using (var cmd = new SQLiteCommand(@"SELECT DISTINCT Name_C FROM composers", connection))//получить команду
+                    {
+                        using (var rdr = cmd.ExecuteReader())
+                        {
+                            List<Composers> composers = new List<Composers>();
+                            while (rdr.Read())//Отправляет CommandText в Connection и строит SqlDataReader.
+                            {
+                                composers.Add(new Composers
+                                {
+                                    Name = rdr.GetString(0)
+                                });
+                            }
+                            return composers;
                         }
                     }
                 }

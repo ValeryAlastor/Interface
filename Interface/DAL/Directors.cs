@@ -8,5 +8,6 @@ namespace Interface.DAL
 {
     class Directors
     {
+        public string Name { get; internal set; }
     }
 }

@@ -30,9 +30,9 @@ namespace Interface
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.bsUser = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -87,7 +87,7 @@ namespace Interface
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.38575F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.61425F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 859F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 862F));
             this.tableLayoutPanel2.Controls.Add(this.btnCancel, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.btnFound, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxGenre, 1, 2);
@@ -107,7 +107,7 @@ namespace Interface
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(408, 523);
+            this.btnCancel.Location = new System.Drawing.Point(405, 523);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(180, 24);
             this.btnCancel.TabIndex = 5;
@@ -117,7 +117,7 @@ namespace Interface
             // 
             // btnFound
             // 
-            this.btnFound.Location = new System.Drawing.Point(408, 492);
+            this.btnFound.Location = new System.Drawing.Point(405, 492);
             this.btnFound.Name = "btnFound";
             this.btnFound.Size = new System.Drawing.Size(180, 25);
             this.btnFound.TabIndex = 4;
@@ -134,7 +134,7 @@ namespace Interface
             "Фентези",
             "Фантастика",
             "Ужасы"});
-            this.comboBoxGenre.Location = new System.Drawing.Point(203, 523);
+            this.comboBoxGenre.Location = new System.Drawing.Point(202, 523);
             this.comboBoxGenre.Name = "comboBoxGenre";
             this.comboBoxGenre.Size = new System.Drawing.Size(167, 24);
             this.comboBoxGenre.TabIndex = 8;
@@ -142,7 +142,7 @@ namespace Interface
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(203, 492);
+            this.textBox1.Location = new System.Drawing.Point(202, 492);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(167, 25);
@@ -162,7 +162,7 @@ namespace Interface
             // 
             this.btnMenu.Location = new System.Drawing.Point(3, 492);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(170, 23);
+            this.btnMenu.Size = new System.Drawing.Size(170, 25);
             this.btnMenu.TabIndex = 2;
             this.btnMenu.Text = "Назад в меню";
             this.btnMenu.UseVisualStyleBackColor = true;
@@ -208,24 +208,25 @@ namespace Interface
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.5415F));
             this.tableLayoutPanel1.Controls.Add(this.btnChartGenre, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.chart1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnChartClear, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnSavePDF, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnChartClear, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.545455F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.45454F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1265, 550);
             this.tableLayoutPanel1.TabIndex = 10;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // btnChartGenre
             // 
-            this.btnChartGenre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChartGenre.Location = new System.Drawing.Point(1121, 3);
+            this.btnChartGenre.Location = new System.Drawing.Point(1122, 3);
             this.btnChartGenre.Name = "btnChartGenre";
-            this.btnChartGenre.Size = new System.Drawing.Size(141, 27);
+            this.btnChartGenre.Size = new System.Drawing.Size(140, 27);
             this.btnChartGenre.TabIndex = 10;
             this.btnChartGenre.Text = "Жанры";
             this.btnChartGenre.UseVisualStyleBackColor = true;
@@ -233,30 +234,29 @@ namespace Interface
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             this.tableLayoutPanel1.SetRowSpan(this.chart1, 3);
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Фильмы";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(1112, 544);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Фильмы";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(1113, 544);
             this.chart1.TabIndex = 9;
             this.chart1.Text = "chart1";
             // 
             // btnChartClear
             // 
-            this.btnChartClear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChartClear.Location = new System.Drawing.Point(1121, 69);
+            this.btnChartClear.Location = new System.Drawing.Point(1122, 70);
             this.btnChartClear.Name = "btnChartClear";
-            this.btnChartClear.Size = new System.Drawing.Size(141, 23);
+            this.btnChartClear.Size = new System.Drawing.Size(140, 23);
             this.btnChartClear.TabIndex = 11;
             this.btnChartClear.Text = "Очистить";
             this.btnChartClear.UseVisualStyleBackColor = true;
@@ -264,10 +264,9 @@ namespace Interface
             // 
             // btnSavePDF
             // 
-            this.btnSavePDF.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSavePDF.Location = new System.Drawing.Point(1121, 36);
+            this.btnSavePDF.Location = new System.Drawing.Point(1122, 36);
             this.btnSavePDF.Name = "btnSavePDF";
-            this.btnSavePDF.Size = new System.Drawing.Size(141, 27);
+            this.btnSavePDF.Size = new System.Drawing.Size(140, 27);
             this.btnSavePDF.TabIndex = 12;
             this.btnSavePDF.Text = "Сохранить в PNG";
             this.btnSavePDF.UseVisualStyleBackColor = true;
